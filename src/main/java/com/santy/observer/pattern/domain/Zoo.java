@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.santy.observer.pattern.listener.AnimalAddedListener;
+import com.santy.observer.pattern.listener.manager.AnimalAddedListenerManager;
 
 /**
  * The Class Zoo.
@@ -27,11 +28,25 @@ public class Zoo
 	 *
 	 * @param listener
 	 *            the listener
+	 * @return the animal added listener
 	 */
 	public AnimalAddedListener registerAnimalAddedListener(AnimalAddedListener listener)
 	{
 		this.listeners.add(listener);
 		return listener;
+	}
+
+	/**
+	 * Register animal added listener2.
+	 *
+	 * @param listener
+	 *            the listener
+	 * @return the animal added listener manager
+	 */
+	public AnimalAddedListenerManager registerAnimalAddedListener2(AnimalAddedListener listener)
+	{
+		this.listeners.add(listener);
+		return new AnimalAddedListenerManager(listener);
 	}
 
 	/**
@@ -43,6 +58,11 @@ public class Zoo
 	public void unregisterAnimalAddedListener(AnimalAddedListener listener)
 	{
 		this.listeners.remove(listener);
+	}
+
+	public void unregisterAnmialAddedListener(AnimalAddedListenerManager manager)
+	{
+		this.listeners.remove(manager.getListener());
 	}
 
 	/**
