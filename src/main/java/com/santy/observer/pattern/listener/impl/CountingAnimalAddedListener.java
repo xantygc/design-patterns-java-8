@@ -23,7 +23,7 @@ public class CountingAnimalAddedListener implements AnimalAddedListener
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.santy.observer.pattern.listener.AnimalAddedListener#onAnimalAdded(com.santy.observer.pattern.domain.Animal)
 	 */
 	@Override
@@ -31,7 +31,6 @@ public class CountingAnimalAddedListener implements AnimalAddedListener
 	{
 
 		animalsAddedCount++;
-
 		System.out.println("Total animals added: " + animalsAddedCount);
 
 	}
