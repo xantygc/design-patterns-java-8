@@ -28,9 +28,10 @@ public class Zoo
 	 * @param listener
 	 *            the listener
 	 */
-	public void registerAnimalAddedListener(AnimalAddedListener listener)
+	public AnimalAddedListener registerAnimalAddedListener(AnimalAddedListener listener)
 	{
 		this.listeners.add(listener);
+		return listener;
 	}
 
 	/**
